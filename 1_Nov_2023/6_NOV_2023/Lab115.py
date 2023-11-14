@@ -1,0 +1,55 @@
+# Encapsulation
+# Data Members(Attributes) and Methods Together in a class
+# Person -> name,age and eat(), sleep()
+
+
+# Visibility
+
+# !! Public Member
+# Public members have no special naming convention in Python and
+# are accessible from anywhere.
+# They can be accessed directly from outside the class and other modules.
+
+
+# ----------------------
+# !! Protected Member
+# Protected members are denoted by a single underscore prefix (_).
+# They can still be accessed from outside the class, but it is considered a
+# best practice not to do so directly.
+
+
+# ----------------------
+# !! Private  Member
+# Private members are denoted by a double underscore prefix (__).
+# Private members are intended to be used within the class only.
+class MyClass:
+
+    def __init__(self):
+        self.public_var = 10
+        self._protected_var = 12
+        self.__private_var = 15
+        # print(self.public_var, self.__private_var, self._protected_var)
+
+    def public_method(self):
+        print("This is Public Method")
+
+    def _protected_method(self):
+        print("This is Protected Method")
+        print(self.__private_var)
+
+    def __private_method(self):
+        print("This is a private method.")
+
+obj = MyClass()
+obj.public_var = 34
+print(obj.public_var)
+obj.__private_var = 50
+print(obj.__private_var)
+# obj._protected_var = 100
+print(obj._protected_var)
+# Public
+obj.public_method()
+obj._protected_method()
+# obj.__private_method()
+
+
